@@ -7,6 +7,9 @@
 \usepackage{url}
 \usepackage{enumerate}
 
+\setlength\intextsep{0pt}
+\setlength\textfloatsep{0pt}
+
 
 \title{複数人で使用可能な3Dアイデアノートシステムの提案と実装}
 \date{平成 29 年 9 月 26 日}
@@ -19,13 +22,15 @@
 \headtitle{平成 29 年度 情報学専攻 修士論文中間発表}
 %\headtitle{平成 yy 年度 総合情報学科 修士論文発表}
 
+
+
 \begin{document}
 \maketitle
 
 \section{はじめに}
-アイデアは机やホワイトボード等がないような場面でも突然思い浮かぶことがある。また、友人と話し合いをしているときにアイデアが連鎖的に生まれることがある。
+アイデアはふとしたときに思い浮かぶことがあり、私達はそれを紙に書き留めたり、PCを利用してメモを取ることがある。しかし、アイデアが思い浮かぶのは座って作業しているときだけではなく、外で歩いているときや、机やホワイトボード等がないような場面でも突然思い浮かぶことがある。また、友人と話し合いをしているときにアイデアが連鎖的に生まれることがある。
 
-近年、HMD(Head Mounted Display)が普及してきた。現在、HMDに関する多くの研究は一人で特定の場所において使うことが想定されている。現状では外などの広い空間を利用し、複数人で利用することを想定した研究やアプリケーションは少ない。そこで、複数人で使用できて、どこでも利用できるシステムが必要となる。本研究は実世界の広い空間上の任意の場所にメモを残すことができ、複数人で利用できるようなシステムの提案と実装を行う。
+近年、HMD(Head Mounted Display)が普及してきた。現在、HMDに関する多くの研究は一人で特定の場所において使うことが想定されている。現状では外などの広い空間を利用し、複数人で利用することを想定した研究やアプリケーションは少ない。本研究は実世界の広い空間上の任意の場所にメモを残すことができ、複数人で利用できるようなシステムの提案と実装を行う。
 
 \section{関連研究}
 椎尾ら\cite{tex1,tex2}は仮想の手書きメモによるコミュニケーションをウェアラブルコンピュータにより実現する空気ペンを試作した。問題点としては、同時に複数人で使用できないことや、使用できる範囲がRFIDタグがついた床上のみなので場所が限定されることが挙げられる。
@@ -40,7 +45,7 @@
 \begin{enumerate}[(1)]
  \item 複数人で話し合ってアイデアを生み出し、お互いのメモを共有することができる。
  \item 実世界の広い空間上の任意の場所にメモを置くことができ、どこでも場所を選ばず利用できる。
- \item 簡単な操作で直感的で様々な入力ができる。
+ \item 簡単な操作で直感的に様々な入力ができる。
 \end{enumerate}
 
 \section{提案するシステム}
@@ -82,20 +87,27 @@
 ハードウェアはHoloLensを利用し、開発環境はWindows10でUnity\cite{tex9}を使用した。また、Unity用のHoloLens向けのツールキットであるHoloToolkit-Unityの導入を行った。
 
 \subsection{動作確認}
-3D描画システムの試作を行い、HoloLens上でシステムを動かして、動作を確認した。3D空間上でタップアンドホールドをすると描画が開始され、ホールドを解除すると描画を終了するようにした。3D空間上で手前から奥に線を引くことができることも確認できた。線が表示される位置がタップアンドホールドした位置より少し離れた場所に表示されているので、今後調整する必要があると考えられる。また、図\ref{fig:rittai}のように3D空間上に立体の図形を描き、表示できることも確認できた。
+3D描画システムの試作を行い、HoloLens上でシステムを動かして、動作を確認した。3D空間上でタップアンドホールドをすると描画が開始され、ホールドを解除すると描画を終了するようにした。3D空間上で手前から奥に線を引くことができることも確認できた。線が表示される位置がタップアンドホールドした位置より少し離れた場所に表示されているので、今後調整する必要があると考えられる。また、図\ref{fig:rittai}のように3D空間上に配置した仮想平面上に文字を描いて、自分の方向に面を向けて表示できることも確認できた。
+
+\vspace{0.5zh}
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[clip,height=4.0cm,width=6.0cm]{./rittai.eps}
-    \caption{3D空間上に立体の図形を描画}
+    \includegraphics[clip,height=4.0cm,width=7.0cm]{./tegakimoji.eps}
+    \caption{仮想平面上に描いた文字を自分に向けて表示}
     \label{fig:rittai}
   \end{center}
 \end{figure}
+
+\vspace{-1zh}
+\vspace{-1zh}
 
 \section{まとめ}
 3D空間上の任意の場所にメモを置くことができ、複数人で使用できる3Dアイデアノートシステムの提案を行った。
 
 今後はメモの共有に関する予備実験、本システムの実装、本実験、評価を行っていく予定である。
+
+\vspace{-1zh}
 
 {\small
 \begin{thebibliography}{99}
@@ -103,7 +115,7 @@
         山本, 椎尾:
         空気ペン―空間への描画による情報共有－;
         情報処理学会全国大会講演論文集,
-        {\bf Vol.59}, No.4, pp.39-40(1999)
+        {\bf Vol.59}, No.4, pp.39-40(1999).
 \bibitem{tex2}
 	椎尾, 山本:
 	コミュニケーションツールのための簡易型ARシステム;
@@ -123,22 +135,22 @@
         長田, 佐々木, 島田, 佐藤:
         スマートグラスを用いた仮想空間への手書き情報共有システム;
         情報処理学会第77回全国大会論文集,
-        3-205, 206(2015)
+        3-205, 206(2015).
 \bibitem{tex6}
         Microsoft Inc:
         HoloLens;
-        \url{https://www.microsoft.com/ja-jp/hololens}
+        \textless\url{https://www.microsoft.com/ja-jp/hololens}\textgreater2017年9月21日アクセス.
 \bibitem{tex7}
         Microsoft Inc:
         HoloToolkit;
-        \url{https://github.com/Microsoft/HoloToolkit-Unity}
+        \textless\url{https://github.com/Microsoft/HoloToolkit-Unity}\textgreater2017年9月21日アクセス.
 \bibitem{tex8}
         HoloToolkit-UnityのSharingの仕組みをできるだけ簡単に理解する; 
-        \url{http://qiita.com/miyaura/items/da1d7bd253c3299327ba}
+        \textless\url{http://qiita.com/miyaura/items/da1d7bd253c3299327ba}\textgreater2017年9月21日アクセス.
 \bibitem{tex9}
         Unity Technologies Inc:
         Unity;
-        \url{https://unity3d.com/jp/unity}
+        \textless\url{https://unity3d.com/jp/unity}\textgreater2017年9月21日アクセス.
 
 \end{thebibliography}
 }
